@@ -70,7 +70,7 @@ var refreshTheMap = function (floorIdx) {
         .attr("cy", function (geo) {
           return projection(geo.coordinates)[1];
         })
-        .attr("r", geoFeature.properties.radius)
+        .attr("r", Number(geoFeature.properties.radius))
         .style("fill", geoFeature.properties.color)
         .attr("stroke", geoFeature.properties.color)
         .attr("stroke-width", 1)
@@ -121,13 +121,13 @@ var refreshTheMap = function (floorIdx) {
 };
 
 function showUserPosition(position) {
-  var geoPoint = [];
-  geoPoint.push(position.coords.longitude);
-  geoPoint.push(position.coords.latitude);
-  console.log(geoPoint + "" + projection(geoPoint));
-  d3.select("#userPoint")
-    .style("position", "absolute")
-    .style("left", "" + projection(geoPoint)[0] + "px")
-    .style("top", "" + projection(geoPoint)[1] + "px")
-    .style("z-index", 1002)
+  // var geoPoint = [];
+  // geoPoint.push(position.coords.longitude);
+  // geoPoint.push(position.coords.latitude);
+  // console.log(geoPoint + "" + projection(geoPoint));
+  // d3.select("#userPoint")
+  //   .style("position", "absolute")
+  //   .style("left", "" + projection(geoPoint)[0] + "px")
+  //   .style("top", "" + projection(geoPoint)[1] + "px")
+  //   .style("z-index", 1002)
 }
